@@ -22,11 +22,6 @@ This project was built as a learning exercise to strengthen understanding of:
 
 ---
 
-## Overview
-
-The goal of this project is to simulate how a simple operating system manages different subsystems.
-
----
 
 ## Screenshots
 
