@@ -20,3 +20,4 @@
 [09:37:48] Login option selected
 [09:37:51] User dhruv logged in
 [09:38:12] File player.txt deleted from data\player via shell command
+[09:54:50] Python OS started

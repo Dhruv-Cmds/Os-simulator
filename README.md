@@ -115,6 +115,21 @@ exit
 
 ---
 
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Dhruv-Cmds/Python-os-simulator.git
+   ```
+   
+2. Navigate into the project directory:
+  ```bash
+  cd Python-os-simulator
+  ```
+3. Run the program:
+  python main.py
+
+---
+
 ## Project Structure
 
 ```
@@ -232,15 +247,7 @@ Improvements
 
 ---
 
-Project Stats
-
-~1600+ lines of Python code  
-8 modular components  
-Terminal-based OS simulation
-
 ## Author
 
 Dhruv
 
-Python Developer | Exploring System Design
-GitHub: https://github.com/Dhruv-Cmds
