@@ -7,6 +7,35 @@ Two small command-line operating-system simulators built for learning and experi
 
 These projects simulate operating-system concepts in user space. They do not boot a real kernel or manage computer hardware.
 
+
+
+## Screenshots
+
+### System Start
+![System Start](screenshots/01_system_start_menu.png)
+
+### Main Menu
+![Main Menu](screenshots/03_login_success_main_menu.png)
+
+### File System
+![File System](screenshots/04_file_system_menu_and_creat_file.png)
+
+### Folder Manager
+![Folder Manager](screenshots/23_folder_manager_menu.png)
+
+### Process Manager
+![Process Manager](screenshots/9_process_manager_menu.png)
+
+### Memory Manager
+![Memory Manager](screenshots/14_memory_manager_menu.png)
+
+### Terminal 
+![Terminal Mode](screenshots/terminal.png)
+
+### System Logs
+![Logs](screenshots/20_view_system_logs.png)
+
+
 ## Repository structure
 
 ```text
