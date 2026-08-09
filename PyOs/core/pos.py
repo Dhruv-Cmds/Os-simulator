@@ -27,7 +27,7 @@ class Login:
                 continue     
 
             try:
-                with open("data/users.txt" , "r") as f:
+                with open("PyOs/data/users.txt" , "r") as f:
                     for line in f:
                         parts = line.strip().split(":") 
                         if len(parts) != 2: 
@@ -69,7 +69,7 @@ class Login:
                 continue
 
             try:
-                with open("data/users.txt") as f:
+                with open("PyOs/data/users.txt") as f:
                     for line in f:
                         parts = line.strip().split(":")  
                         if len(parts) != 2: 
@@ -90,7 +90,7 @@ class Login:
                 print("Wrong password! Try again.")
                 continue 
 
-            with open("data/users.txt" , "a") as f:
+            with open("PyOs/data/users.txt" , "a") as f:
                 f.write(f"{username}:{password}\n")
 
             print("User created successfully!\n")
@@ -149,7 +149,7 @@ class Login:
                 print("\n--- System Logs ---")
 
                 try:
-                    with open("data/logs.txt") as f:
+                    with open("PyOs/data/logs.txt") as f:
                         print(f.read())
                 except FileNotFoundError:
                     print("No logs found.")

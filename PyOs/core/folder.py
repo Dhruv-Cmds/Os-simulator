@@ -4,7 +4,7 @@ import file_system
 from logger import log
 
 # Folder path where all folder goes
-BASE_DIR = "data"
+BASE_DIR = "PyOs/data"
 
 class Folder:
 

@@ -5,7 +5,7 @@ def log(message):
 
     time = datetime.now().strftime("%H:%M:%S")
 
-    os.makedirs("data", exist_ok=True)  # ensures folder exists
+    os.makedirs("PyOs/data", exist_ok=True)  # ensures folder exists
 
-    with open("data/logs.txt", "a") as f:
+    with open("PyOs/data/logs.txt", "a") as f:
         f.write(f"[{time}] {message}\n")

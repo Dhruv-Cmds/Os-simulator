@@ -2,7 +2,7 @@
 import os
 from logger import log
 
-BASE_DIR = "data/files"
+BASE_DIR = "PyOs/data/files"
  
 class FileSystem:
 

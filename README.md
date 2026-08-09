@@ -1,253 +1,147 @@
-# Python OS Simulator
+# OS Simulator
 
-A terminal-based operating system simulator built with **pure Python**.
-This project demonstrates core programming concepts such as **Object-Oriented Programming, file handling, system simulation, and modular architecture** without relying on external frameworks.
+Two small command-line operating-system simulators built for learning and experimentation:
 
-The simulator mimics basic operating system components including **user authentication, file management, process handling, and memory simulation**.
+- **PyOS** — a modular Python CLI simulator with authentication, file and folder management, processes, memory, logs, and a terminal.
+- **JsOS** — a JavaScript/Node.js terminal prototype with basic filesystem commands and system information utilities.
 
----
+These projects simulate operating-system concepts in user space. They do not boot a real kernel or manage computer hardware.
 
-## Overview
+## Repository structure
 
-The goal of this project is to simulate how a simple operating system manages different subsystems.
-Instead of focusing on UI or frameworks, the emphasis is on **core logic, system design, and clean code structure**.
-
-This project was built as a learning exercise to strengthen understanding of:
-
-* Python fundamentals
-* OOP design
-* Modular programming
-* State management
-* File-based persistence
-
----
-
-
-## Screenshots
-
-### System Start
-![System Start](screenshots/01_system_start_menu.png)
-
-### Main Menu
-![Main Menu](screenshots/03_login_success_main_menu.png)
-
-### File System
-![File System](screenshots/04_file_system_menu_and_creat_file.png)
-
-### Folder Manager
-![Folder Manager](screenshots/23_folder_manager_menu.png)
-
-### Process Manager
-![Process Manager](screenshots/9_process_manager_menu.png)
-
-### Memory Manager
-![Memory Manager](screenshots/14_memory_manager_menu.png)
-
-### Terminal 
-![Terminal Mode](screenshots/terminal.png)
-
-### System Logs
-![Logs](screenshots/20_view_system_logs.png)
-
-
-## Features
-
-* **User Authentication**
-
-  * Register and login system
-  * Persistent user storage
-
-* **File System Simulation**
-
-  * Create virtual files
-  * Read stored file content
-  * Delete files
-  * List available files
-
-* **Process Manager**
-
-  * Simulate running processes
-  * Assign process IDs (PID)
-  * View active processes
-  * Terminate processes
-
-* **Memory Manager**
-
-  * Simulate memory allocation
-  * Track used and free memory
-  * Deallocate memory
-
-* **Create Folder**
-
-  * Create folder
-  * Open fodler
-  * Delete fodler
-  * List folder
-
-* **System Logging**
-
-  * Track important system events
-  * User login activity
-  * File operations
-  * Process actions
-
-## Shell Commands
-
-```bash
-ls                     # list files
-mkdir <folder_name>    # create folder
-touch <file>           # create file
-touch <folder/file>    # create file inside folder
-rm <file>              # delete file
-rm <folder/file>       # delete file inside folder
-```
-
-## System Commands
-
-```bash
-help
-about
-system_info
-uptime
-clear
-exit
-```
-
----
-
-## Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/Dhruv-Cmds/Python-os-simulator.git
-   ```
-   
-2. Navigate into the project directory:
-  ```bash
-  cd Python-os-simulator
-  ```
-3. Run the program:
-  python main.py
-
----
-
-## Project Structure
-
-```
-python-os-simulator/
-│
-├── core/
-│   ├── cmd.py
-│   ├── file_system.py
-│   ├── folder.py
-│   ├── logger.py
-│   ├── Main.py
-│   ├── memory.py
-│   ├── pos.py
-│   ├── process.py
-│
-├── data/
-│   │ └── files/
-│   └── player/
-│         └─ main.py
-│   ├── files.json
-│   ├── logs.txt
-│   ├── test.txt
-│   └── users.txt
-│
-│
-├── screenshots
-│
-├── .gitattributes
-├── .gitignore
-├──  LICENSE
+```text
+OS simulator/
+├── PyOs/
+│   ├── core/
+│   │   ├── main.py          # Python OS entry point
+│   │   ├── pos.py           # Login, registration, and main menu
+│   │   ├── file_system.py   # Virtual file operations
+│   │   ├── folder.py        # Folder operations
+│   │   ├── process.py       # Process manager
+│   │   ├── memory.py        # Memory manager
+│   │   ├── cmd.py           # Python terminal
+│   │   └── logger.py        # System event logging
+│   └── data/
+│       ├── users.txt        # Registered users
+│       └── logs.txt         # System logs
+├── JsOs/
+│   └── core/
+│       └── cmd.js           # JavaScript terminal prototype
+├── LICENSE
 └── README.md
 ```
 
-Each module is responsible for a specific subsystem of the simulated OS.
+## PyOS
 
----
+### Features
 
-## How It Works
+- User registration and login using local text-file storage
+- Virtual file creation, reading, editing, deleting, and listing
+- Folder creation, opening, listing, and deletion
+- Process creation, PID assignment, process listing, and termination
+- Simulated 1024 MB memory allocation and release
+- Event logging to `PyOs/data/logs.txt`
+- Interactive terminal commands such as `ls`, `mkdir`, `touch`, `rm`, `clear`, `about`, `system_info`, and `uptime`
 
-When the program starts, users are presented with a login/register interface.
-After authentication, the main system menu allows interaction with various simulated OS components.
+### Requirements
 
-The simulator uses **file-based storage** to persist data between sessions.
+- Python 3.8 or newer
+- No external Python packages are required
 
----
+### Run PyOS
 
-## Example Usage
+From the repository root:
 
-```
-====================================
-        PYTHON OS
-====================================
-
-1. Login
-2. Register
-3. Exit
-
-Enter choice: 1
-
-Login successful!
-
-Main Menu
-1. File System
-2. Creat Folder
-3. Process Manager
-4. Memory Manager
-5. View Logs
-6. Terminal
-7. Logout
+```bash
+python3 PyOs/core/main.py
 ```
 
----
+On Windows, use:
 
-## Technologies Used
+```powershell
+py PyOs/core/main.py
+```
 
-* Python 3
-* Object-Oriented Programming
-* File Handling
-* JSON / Text Storage
+The program starts with login, registration, or exit options. After logging in, choose **Terminal Mode** to use the command interface.
 
-No external libraries or frameworks were used.
+### Python terminal commands
 
----
+```text
+ls                         List files
+mkdir <folder>             Create a folder
+touch <file>               Create an empty file
+touch <folder>/<file>      Create a file inside a folder
+rm <file>                  Remove a file
+create_file                Create a file with content
+read_file                  Read a file
+edit_file                  Replace file content
+delete_file                Delete a file
+list_files                 List files
+create_folder              Create a folder
+open_folder                Open a folder
+delete_folder              Delete a folder
+list_folder                List folders and files
+start_process              Start a simulated process
+kill_process               Terminate a process by PID
+view_process               Show running processes
+allocate_memory            Allocate simulated memory
+free_memory                Free simulated memory
+show_memory                Show memory usage
+view_logs                  View system logs
+system_info                Show system information
+about                      Show project information
+uptime                     Show session uptime
+clear                      Clear the terminal
+exit                       Leave the terminal
+```
 
----
+PyOS stores user accounts and logs locally. Do not use real passwords in `PyOs/data/users.txt`; this is an educational simulator, not a secure authentication system.
 
-## Changelog
+## JsOS
 
-### v1.2.0
+### Features currently implemented
 
-New Features
-- Added terminal commands (about, uptime, system_info)
-- Improved command terminal usability
+- `ls` — list directory contents
+- `mkdir` — create a folder
+- `touch` — create a file
+- `rm` — remove a file
+- `cat` — print file contents
+- `nano` — save file content
+- `clear` / `cls` — clear the console
+- `uptime` — display running time
+- `sysinfo` and `sysabout` — display system details
+- `exit` — stop the uptime display
 
-Improvements
-- Better system interaction through command interface
+### Requirements
 
-### v1.1.0
-- Introduced Folder Manager (create, open, delete folders)
-- Enabled file creation inside folders
-- Improved modular interaction between folder and file system
-- Stability improvements and bug fixes
+- Node.js with ES module support (Node.js 18 or newer recommended)
+- No external npm packages are required
 
-### v1.0.1
-- Fixed login validation
-- Fixed process manager edge case
-- Improved memory manager safety
+### Run JsOS
 
-### v1.0.0
-- Initial release
-- File system
-- Process manager
-- Memory manager
-- Logging
+From the repository root, create the JavaScript data directory first:
 
----
+```bash
+mkdir -p JsOs/data
+node --experimental-default-type=module JsOs/core/cmd.js
+```
 
-## Author
+The current JavaScript implementation uses ES modules and is a command class/prototype rather than a full interactive command loop. The file includes example calls at the bottom that create `test.txt`, create a `state` directory, and save `file.txt` in `JsOs/data`. Individual commands can be enabled or called from code as the prototype is extended.
 
-Dhruv
+## Concepts demonstrated
 
+- Modular program structure
+- Object-oriented programming
+- Command-line interfaces
+- File and directory handling
+- Local persistence
+- Process and memory state simulation
+- Logging and basic system diagnostics
+
+## Limitations
+
+This project is intentionally simple. It does not provide kernel isolation, real CPU scheduling, hardware access, secure password hashing, permissions, or persistent process/memory state across restarts.
+
+## License
+
+See [LICENSE](LICENSE).
