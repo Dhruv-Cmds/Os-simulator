@@ -215,5 +215,5 @@ let term = new Terminal();
 term.touch("test.txt");
 term.mkdir("state");
 term.nano("file.txt", "Hello");
-// term.cat("file.txt");
-// term.rm("file.txt");
+term.cat("file.txt");
+term.rm("file.txt");
